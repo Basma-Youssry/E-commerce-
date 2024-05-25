@@ -1,0 +1,99 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="home"><img src="../../../assets/images/freshcart-logo.svg" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link cursor-pointer" routerLink="home" routerLinkActive="active-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link cursor-pointer"  routerLink="products" routerLinkActive="active-link">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link cursor-pointer"  routerLink="categories" routerLinkActive="active-link">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link cursor-pointer"  routerLink="brands" routerLinkActive="active-link">Brands</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/settings">
+              Settings
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#" routerLink="/settings/update">Update password</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#" routerLink="/settings/forget">Forget password</a></li>
+            </ul>
+          </li> -->
+        </ul>
+      </div>
+
+
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-user fa-xl text-main"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li routerLink="/forgotPassword" routerLinkActive="active-link">
+                <a class="dropdown-item">Forgot password</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link cursor-pointer position-relative" routerLink="/wishList">
+              <i class="fas fa-heart fa-2x text-main text-danger"></i>
+              <span class="badge bg-info position-absolute top-0 end-0">{{wishCount}}</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link cursor-pointer position-relative" routerLink="cart">
+              <i class="fas fa-cart-shopping fa-2x text-main"></i>
+              <span class="badge bg-info position-absolute top-0 end-0">{{cartCount}}</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active cursor-pointer" aria-current="page" router-link="home" >
+                <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active cursor-pointer" aria-current="page" router-link="home" >
+                <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active cursor-pointer" aria-current="page" router-link="home" >
+                <i class="fab fa-tiktok"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active cursor-pointer" aria-current="page" router-link="home" >
+                <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active cursor-pointer" aria-current="page" router-link="home" >
+                <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active cursor-pointer" aria-current="page" router-link="home" >
+                <i class="fab fa-youtube"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <!-- //Week4 V.9 (Login) -->
+            <span class="nav-link active cursor-pointer" aria-current="page" router-link="home" (click)="signOutUser()" >
+                SignOut
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>

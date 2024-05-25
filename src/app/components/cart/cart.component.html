@@ -1,0 +1,29 @@
+
+<section class="w-75 mx-auto bg-main-light rounded-3 p-3">
+    <h3>Shop Cart</h3>
+    <p class="text-main">TotalPrice:{{ cartDetails.totalCartPrice | currency : ' EGP ' }}</p>
+    <p class="fs-3 fw-bolder" *ngIf="cartDetails.totalCartPrice<= 0">This Cart is empty</p>
+    <div class="row mb-4 border-bottom" *ngFor="let item of cartDetails.products">
+        <div class="col-md-1">
+            <img [src]="item.product.imageCover" alt="" class="w-100">
+        </div>
+        <div class="col-md-11 d-flex justify-content-between">
+            <!-- details -->
+            <div>
+                <p>{{item.product.title}}</p>
+                <p class="text-main">Price: {{item.price}}</p>
+                <button class="border-0 m-0 p-0 mb-2" (click)="removeCartItem(item.product.id)">
+                    <i class="fa-regular fa-trash-can"></i>
+                    Remove
+                </button>
+            </div>
+            <!-- btns -->
+            <div>
+                <button class="btn border border-success" (click)="changeCount(item.product.id, item.count+1)">+</button>
+                <span class="mx-1">{{item.count}}</span>
+                <button class="btn border border-success" (click)="changeCount(item.product.id, item.count-1)">-</button>
+            </div>
+        </div>
+    </div>
+    <button class="btn-main" [routerLink]="['/checkout', cartDetails._id]">Online Payment <img src="./assets/images/visa-1.svg" alt="Payment"></button>
+</section>

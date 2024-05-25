@@ -1,0 +1,25 @@
+<div class="row g-4 p-5">
+    <div class="col-md-2 " *ngFor="let product of products | search:searchTerm">
+        <div class="product item h-100 p-2">
+            <!-- Add -->
+            <i *ngIf="!wishlist.includes(product._id)" (click)="addFav(product._id)" role="button" class="fa-regular fa-heart heart"></i>
+            <!-- remove -->
+            <i *ngIf="wishlist.includes(product._id)"  (click)="removeFav(product._id)" role="button" class="fa-solid fa-heart fs-1 heart"></i>
+
+            <div [routerLink]="['/details', product._id]">
+                <img [src]="product.imageCover" [alt]="product.title" class="w-100">
+                <h3 class="h6">{{product.category.name}}</h3>
+                <h4 class="h6">{{product.title | termtext:2}}</h4>
+                <div class="d-flex justify-content-between">
+                    <span>{{product.price}}</span>
+                    <div>
+                        <i class="fas fa-star rating-color"></i>
+                        <span class="ms-1">{{product.ratingsAverage}}</span>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn-main w-100 my-2" (click)="addCart(product._id)">Add Products</button>
+        </div>
+    </div>
+</div>

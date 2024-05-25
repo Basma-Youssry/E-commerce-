@@ -1,0 +1,43 @@
+<section>
+        <h2 class="d-inline-block my-5 fw-bolder text-main">All Brands</h2>
+    <!-- Button trigger modal -->
+        <div role="button" class="container d-flex flex-column align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <div class="row g-4">
+                <div role="button" *ngFor="let brand of brands" class="col-sm-6 col-md-3" (click)="specificBrand(brand._id)">
+                    <div class="border product">
+                        <img [src]="brand.image" alt="" class="w-100" height="200">
+                        <p class="text-center">{{brand.name}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="brandsDetails" #element>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="btn-close" aria-label="Close" (click)="close(element)"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row p-4 d-flex align-items-center">
+                            <div class="col-md-6">
+                                <div>
+                                    <h4>{{brandsDetails.name}}</h4>
+                                    <p>{{brandsDetails.slug}}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <img [src]="brandsDetails.image" alt class="w-100" height="150">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)="close(element)">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+  
+  
